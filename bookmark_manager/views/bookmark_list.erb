@@ -1,12 +1,26 @@
 <h1> Bookmark list </h1>
-<ul>
-<% @bookmark_list.each{ |item| %>
-    <li><%= item %></li>
+<table>
+  <thead>
+    <th> title </th>
+    <th> url </th>
+  </thead>
+  <tbody>
+    <% @bookmark_list.each{ |item| %>
+    <tr>
+      <td>
+        <%= item.title %>
+      </td>
+      <td>
+        <%= item.url %>
+      </td>
+    </tr>
 <% } %>
-</ul>
+</tbody>
+</table>
 
 
 <form action="/bookmarks" method="post" >
   <input type="text" name="new bookmark" />
-  <input type="submit" value="submit" /> 
+  <input type="text" name="title" />
+  <input type="submit" value="submit" />
 </form>
